@@ -22,16 +22,15 @@ public class MainActivity extends AppCompatActivity {
     private EditText txSenha;
     BancoDados db = new BancoDados(this);
 
-
-
-
+    public void telaCadastro(View view){
+        Intent intent = new Intent(getApplicationContext(), CadastroAluno.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-        setContentView(R.layout.activity_main);
+         setContentView(R.layout.activity_main);
         txSenha = (EditText) findViewById(R.id.txSenha);
         txMatricula = (EditText) findViewById(R.id.txMatricula);
         btEnviarQ = (Button) findViewById(R.id.btEnviarQ);
@@ -81,5 +80,3 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
-
-//  Maano esse é um teste hahahaha

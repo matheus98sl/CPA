@@ -37,16 +37,41 @@
         app:layout_constraintTop_toBottomOf="@+id/txMatricula" />
 
     <Button
-        android:id="@+id/btEnviarQ"
-        android:layout_width="117dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="32dp"
-        android:text="ENVIAR"
+        android:id="@+id/btnLogin"
+        android:layout_width="148dp"
+        android:layout_height="46dp"
+        android:layout_gravity="start"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="192dp"
+        android:enabled="false"
+        android:text="Login"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@android:color/holo_blue_light"
-        app:layout_constraintTop_toBottomOf="@+id/txSenha" />
+        app:layout_constraintTop_toBottomOf="@+id/txSenha"
+        app:layout_constraintVertical_bias="0.695" />
+
+    <Button
+        android:id="@+id/btnRegistrer"
+        android:layout_width="148dp"
+        android:layout_height="46dp"
+        android:layout_gravity="start"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="120dp"
+        android:enabled="true"
+        android:onClick="telaCadastro"
+        android:text="Registrer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txSenha"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageView"
