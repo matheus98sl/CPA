@@ -13,7 +13,7 @@
         android:id="@+id/txMatricula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="351dp"
+        android:layout_marginTop="264dp"
         android:digits="1234567890."
         android:ems="10"
         android:hint="MATRICULA"
@@ -38,49 +38,36 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="148dp"
-        android:layout_height="46dp"
-        android:layout_gravity="start"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="192dp"
-        android:enabled="false"
-        android:text="Login"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="117dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="52dp"
+        android:background="@android:color/holo_blue_light"
+        android:text="LOGIN"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txSenha"
-        app:layout_constraintVertical_bias="0.695" />
+        app:layout_constraintTop_toBottomOf="@+id/txSenha" />
 
     <Button
         android:id="@+id/btnRegistrer"
-        android:layout_width="148dp"
-        android:layout_height="46dp"
-        android:layout_gravity="start"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="120dp"
-        android:enabled="true"
-        android:onClick="telaCadastro"
-        android:text="Registrer"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="117dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="120dp"
+        android:background="@android:color/holo_blue_light"
+        android:text="Registrar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txSenha"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/txSenha" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="398dp"
+        android:layout_height="195dp"
         app:layout_constraintBottom_toTopOf="@+id/txMatricula"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/free_horizontal_on_white_by_logaster"
-        tools:layout_editor_absoluteX="130dp" />
+        app:layout_constraintVertical_bias="0.179"
+        app:srcCompat="@drawable/free_horizontal_on_white_by_logaster" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

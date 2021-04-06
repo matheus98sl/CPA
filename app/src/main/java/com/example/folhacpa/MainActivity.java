@@ -17,31 +17,33 @@ import java.net.PasswordAuthentication;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btEnviarQ;
+    private Button btnLogin;
     private EditText txMatricula;
     private EditText txSenha;
+    private Button btnRegistrer;
     BancoDados db = new BancoDados(this);
 
-    public void telaCadastro(View view){
+    /* public void telaCadastro(View view){
         Intent intent = new Intent(getApplicationContext(), CadastroAluno.class);
         startActivity(intent);
-    }
+    } */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-         setContentView(R.layout.activity_main);
-        txSenha = (EditText) findViewById(R.id.txSenha);
-        txMatricula = (EditText) findViewById(R.id.txMatricula);
-        btEnviarQ = (Button) findViewById(R.id.btEnviarQ);
-        db.addAlunos(new com.example.questionario.Aluno("Matheus","201908008083","mat@outllok.com","123456"));
+        setContentView(R.layout.activity_main);
+
+        txSenha = findViewById(R.id.txSenha);
+        txMatricula = findViewById(R.id.txMatricula);
+        btnLogin = findViewById(R.id.btnLogin);
+        btnRegistrer = findViewById(R.id.btnRegistrer);
 
 
-        btEnviarQ.setOnClickListener(new View.OnClickListener() {
-
+        /* db.addAlunos(new com.example.questionario.Aluno("Matheus","201908008083","mat@outllok.com","123456")); */
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (txMatricula.getText().toString().equals("")||(txSenha.getText().toString().equals(""))){
+                if (txMatricula.getText().toString().equals("") || (txSenha.getText().toString().equals(""))) {
 
                     AlertDialog.Builder dialogo = new
                             AlertDialog.Builder(MainActivity.this);
@@ -49,19 +51,30 @@ public class MainActivity extends AppCompatActivity {
                     dialogo.setNeutralButton("OK", null);
                     dialogo.show();
 
-                } else{
+                } else {
                     btEnviarQActivity();
+
                 }
 
             }
-
 
             private void btEnviarQActivity() {
                 startActivity(new Intent(MainActivity.this, Tela2.class));
             }
 
         });
+        btnRegistrer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnRegistrerActivity();
+            }
+
+            private void btnRegistrerActivity() {
+                startActivity(new Intent(MainActivity.this, CadastroAluno.class));
+            }
+        });
     }
+
     private Toast toast;
     private long lastBackPressTime = 0;
 
