@@ -1,6 +1,6 @@
 package com.example.questionario;
 
-public class LAluno {
+public class Aluno {
 
     int codigo;
     String nome;
