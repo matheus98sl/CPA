@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (txMatricula.getText().toString().equals("") || (txSenha.getText().toString().equals(""))) {
 
-                    AlertDialog.Builder dialogo = new
-                            AlertDialog.Builder(MainActivity.this);
+                    AlertDialog.Builder dialogo = new AlertDialog.Builder(MainActivity.this);
                     dialogo.setMessage("Matricula ou Senha invalido");
+                    dialogo.setCancelable(false);
                     dialogo.setNeutralButton("OK", null);
                     dialogo.show();
 
