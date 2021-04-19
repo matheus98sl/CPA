@@ -11,19 +11,20 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-
 public class MainActivity extends AppCompatActivity {
 
     private Button btnLogin;
     private EditText txMatricula;
     private EditText txSenha;
     private Button btnRegistrer;
+    DBHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        db = new DBHelper(this);
         txSenha = findViewById(R.id.txSenha);
         txMatricula = findViewById(R.id.txMatricula);
         btnLogin = findViewById(R.id.btnLogin);
@@ -33,20 +34,27 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (txMatricula.getText().toString().equals("") || (txSenha.getText().toString().equals(""))) {
-
-                    AlertDialog.Builder dialogo = new AlertDialog.Builder(MainActivity.this);
-                    dialogo.setMessage("Matricula ou Senha invalido");
-                    dialogo.setCancelable(false);
-                    dialogo.setNeutralButton("OK", null);
-                    dialogo.show();
-
+                String matricula = txMatricula.getText().toString();
+                String senha = txSenha.getText().toString();
+                if(matricula.equals("")){
+                    Toast.makeText(MainActivity.this,"Matricula nao inserida", Toast.LENGTH_SHORT).show();
+                }
+                else if (senha.equals("")){
+                    Toast.makeText(MainActivity.this,"Senha nao inserida", Toast.LENGTH_SHORT).show();
                 } else {
-                    btEnviarQActivity();
+                    // OK
+                    String res = db.ValidarLogin(matricula,senha);
+                    if(res.equals("OK")){
+                        Toast.makeText(MainActivity.this,"Login ok", Toast.LENGTH_SHORT).show();
+                        startActivity((new Intent(MainActivity.this, Tela2.class)));
+                    }else {
+                        Toast.makeText(MainActivity.this,"Login errado", Toast.LENGTH_SHORT).show();
 
+                    }
                 }
 
-            }
+
+             }
 
             private void btEnviarQActivity() {
                 startActivity(new Intent(MainActivity.this, Tela2.class));

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_aviso"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".CadastroAluno"></activity>
+        <activity android:name=".DBHelper"></activity>
+        <activity android:name=".CadastroAluno" />
         <activity android:name=".Tela2" />
         <activity android:name=".MainActivity">
             <intent-filter>
